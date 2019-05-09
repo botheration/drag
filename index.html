@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
@@ -47,9 +48,12 @@
 				</div>
 			</div>
 		</div>
-
+	
 		<script src="js/jquery-1.9.1.min.js"></script>
 		<script src="js/drag.js"></script>
+		<script src="js/jquery-ui-1.11.0.js"></script>
+		
+		
 		<script>
 			//dragstart事件、drag事件和dragend事件
 			$(".moduleArea").on("dragstart",function(event){
@@ -135,16 +139,19 @@
 			function bindDragToModuleWrap(){
 				$('.moduleWrap').each(function(index) {
 					$(this).css("top",$(this).outerHeight(true)*index)
-					$(this).myDrag({
-						parent: '.mian-phone',
+					$(this).dragging({
+						move: 'y',
 						randomPosition: false,
-						handler:'.moduleMove',
-						direction: 'y',
-					});
+						hander: '.moduleMove'
+					})
+					$(this).resizable({
+						aspectRatio: false//开启按比例缩放，也可以指定比例： 16 / 9
+					})
 				});
 				console.log($('.moduleWrap').outerHeight(true))
 				$(".mian-phone > .middlePlaceholder").css("top",$('.moduleWrap').outerHeight(true)*$('.moduleWrap').length)
 			}
+			
 		</script>
 	</body>
 </html>
