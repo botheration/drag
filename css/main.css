@@ -1,0 +1,123 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,body,.content,.contenter {
+	height: calc(100%);
+}
+
+li {
+	list-style: none;
+}
+
+.contenter {
+	display: flex;
+	flex-direction: row;
+}
+
+.left-bar {
+	width: 350px;
+	height: calc(100%);
+	border-right: 1px solid #eee;
+}
+
+.mian {
+	width: calc(100% - 350px);
+	height: calc(100%);
+}
+
+.type-list {
+	
+}
+
+.type-list-title {
+	margin: 10px 0;
+}
+
+.type-list ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.type-list li {
+	flex-basis:114px;
+	height: 114px;
+	text-align: center;
+	border: 1px dashed #eee;
+}
+
+.mian {
+	display: flex;
+	justify-content: center;
+}
+
+.mian-phone {
+	width: 400px;
+	height: calc(100% - 200px);
+	border: 1px solid red;
+	align-self: center;
+	overflow: auto;
+	background: #ddd;
+}
+
+.mian-phone li {
+	margin: 10px auto;
+	width: 90%;
+	height: 200px;
+	border: 1px solid;
+}
+
+.moduleWrap {
+	margin-bottom: 10px;
+	background: #fff;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #eee;
+	z-index: 1;
+}
+
+.middlePlaceholder {
+	display: none;
+	width: 398px;
+	height: 50px;
+	background: #eef0fc;
+}
+
+.mian-phone > .middlePlaceholder {
+	position: absolute;
+	border: 1px dashed #5874d8;
+}
+
+.moduleType {
+    display: block;
+    position: relative;
+}
+
+.moduleTitle {
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #eee;
+}
+
+.moduleMove {
+	/* display: none; */
+	position: absolute;
+	top: 10px;
+	right: 3px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/moduleMove.png) center no-repeat;
+	box-shadow: 0 0 9px #eee;
+	z-index: 2;
+}
+
+
+.moduleContainer {
+	height: 240px;
+}
+
+/* 当点击拖动时，保证当前元素处于前端 */
+.moduleWrap.on{z-index:9;}
